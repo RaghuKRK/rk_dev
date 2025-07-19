@@ -1,2 +1,10 @@
 #Python Basics Problem
+#1. List
+mylist = [1,2, "a", "raghu", 0.5, True,False]
+print(mylist)
+print(mylist[1])
+
+
+
+
 
