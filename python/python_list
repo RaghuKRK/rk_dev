@@ -1,0 +1,89 @@
+# Python Basics Problem
+# 1. Create a list, add an element, remove an element, remove by index, clear the list, pop an element, append vs extend
+mylist = [1, 2, "a", "raghu", 0.5, True, False]
+print(mylist)
+print(mylist[1])
+
+# add an element in the list
+mylist.append("raghu")
+print(mylist)
+
+# remove an element from the list
+mylist.remove("raghu")
+print(mylist)
+
+# remove based on index
+print(mylist)
+mylist.remove(mylist[2])
+print(mylist)
+
+# remove function - only removes the first occurrence of the specified value
+# if you want to remove by index use pop() method and if you want to remove all the occurrences of a value use a loop or list comprehension.
+listrmove = [1, 2, 3, 4, 5, 2, 2, 2, 2]
+print(listrmove)
+listrmove.remove(2)
+print(listrmove)
+
+# remove by index
+listrmove.remove(listrmove[3])
+# To remove all elements in the slice listrmove[1:3], use a loop or list comprehension
+for val in listrmove[1:3].copy():
+	listrmove.remove(val)
+print(listrmove)
+
+# delete function - removes the element at the specified index
+listdel = [1, 2, 3, 4, 5, 6, "aa", "bb"]
+print(listdel)
+# listdel.del(listdel[2]) -- Incorrect syntax
+del listdel[2]  # Correct syntax to delete by index
+del listdel
+# print(listdel)  # This will raise an error because listdel is deleted
+
+# clear the list
+mylist.clear()
+print(mylist)
+
+# Pop
+listpop = [1, 2, 3, 4, 5, "aa", "bb", "cc"]
+print(listpop)
+listpop.pop(2)
+print(listpop)
+# If no index is specified then the last element is removed
+listpop.pop()
+print(listpop)
+
+# difference between append and extend
+# Append adds a single element to the end of the list, while extend adds multiple elements from an iterable (like another list) to the end of the list.
+list2 = [1, 2, 3, 4, 5, 6]
+print(list2)
+list2.append([88, 99])
+print(list2)
+list2.remove([88, 99])
+print(list2)
+# Extend adds elements from an iterable to the end of the list
+list2.extend([88, 99])
+print(list2)
+
+#Difference between delete and remove
+# The delete statement removes an element at a specific index, while the remove method removes the first occurrence of a specified value.
+# If you want to remove by index use del statement and if you want to remove by value use remove method.
+# If you want to remove all occurrences of a value, use a loop or list comprehension.
+# If you want to remove all elements in a slice, use a loop or list comprehension.
+# If you want to clear the entire list, use the clear method.
+# If you want to pop an element, use the pop method with an optional index.
+# If no index is specified, the last element is removed
+
+
+#Updating a list
+list3 = [11,22,33,44,55]
+print(list3)
+list3[2] = 99
+print(list3)
+
+# Updating multiple list
+list4 = [1,2,3,4,5]
+list4[0:4] = ["a", "b", "c", "d"]
+print(list4)
+
+
+
