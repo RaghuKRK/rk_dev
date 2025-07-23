@@ -1,4 +1,6 @@
-# Python Basics Problem
+# Python Basics List Operations
+# Create a list, add an element, remove an element, remove by index, clear the list, pop an element, append vs extend
+# remove vs delete, updating a list
 # 1. Create a list, add an element, remove an element, remove by index, clear the list, pop an element, append vs extend
 mylist = [1, 2, "a", "raghu", 0.5, True, False]
 print(mylist)
@@ -84,6 +86,245 @@ print(list3)
 list4 = [1,2,3,4,5]
 list4[0:4] = ["a", "b", "c", "d"]
 print(list4)
+
+#How to check if an element exists in a list
+liste = [1,2,3,4,5]
+if 3 in liste:
+	print("3 is in the list")
+else:
+	print("3 is not in the list")
+
+###List Looping
+#Loop through a list using a for loop
+#Loop through indices using range and len
+#Loop through elements using enumerate to get both index and value
+#loop in reverse
+# for item in list --Just values
+# for i in range(len()) -- Indexes Only
+# enumerate(list) -- Both index and Value
+# reversed(list) -- loop in reverse order
+
+
+# Loop through a list
+list_loop = [1,2,3,4,5,6,7,8,9,10]
+for x in list_loop:
+	print(x)
+
+# Loop though list using index with range and len
+list_loop2 = ["a", "b", "c", "d", "e"]
+print(list_loop2)
+
+for i in range(len(list_loop2)):
+    print(i, list_loop2[i])
+	
+#Loop through elements using enumerate
+loop_enu = [1,2,3,4,5, "aa", "bb", "cc"]
+
+for i,loop_enu in enumerate(loop_enu):
+	print(i, loop_enu)
+
+## Loop in reverse 
+loop_reverse = [1,2,3,4,5,6,7,8,9,10]
+for i in reversed(loop_reverse):
+	print(i)
+
+# How to sort the list in ascending and descending order
+# There are two ways to sort a list in Python: using the `sort()` method and the `sorted()` function.
+# The `sort()` method sorts the list in place, while the `sorted()` function returns a new sorted list.
+# The `sort()` method modifies the original list, while the `sorted
+# sort() method sorts the list in place, while sorted() returns a new sorted list.
+# sort() modifies the original list, sorted() does not modify the original list.
+list_sort = [5,3,4,5,8,7,99,8,4,2,1]
+print(list_sort)
+list_sort.sort()  # Sorts in ascending order
+print(list_sort)
+#Descending order
+list_sort.sort(reverse=True)  # Sorts in descending order
+print(list_sort)
+
+# sorted() function returns a new sorted list
+list_sorted = [55,44,88,7,4,1,2,5,6,3,45,5,5,6,7,8,9,10]
+print(list_sorted)
+sorted_list= sorted(list_sorted) # Ascending order
+print(sorted_list)
+sorted_list_desc = sorted(list_sorted, reverse=True)  # Descending order
+print(sorted_list_desc)
+
+#How to reverse a list
+# There are two ways to reverse a list in Python: using the `reverse()` method and the `reversed()` function.
+# The `reverse()` method reverses the list in place, while the `reversed()` function returns an iterator that yields the elements of the list in reverse order
+# The `reverse()` method modifies the original list, while the `reversed()` function does not modify the original list.
+# The `reverse()` method does not return a new list, while the `reversed()` function returns an iterator that can be converted to a list.
+list_reverse = [12,3,4,5,"aa","bb","cc"]
+print(list_reverse)
+list_reverse.reverse()
+print(list_reverse)
+
+#using reversed() function
+list_reversed = [3,4,5,"aa","bb","cc"]
+print(list_reversed)
+reversed_list = list(reversed(list_reversed))
+print(reversed_list)
+
+# What is list slicing
+# List slicing is a way to access a portion of a list by specifying a start index, an end index, and an optional step.
+# It allows you to create a new list that contains a subset of the elements from the original list.
+# The syntax for list slicing is `list[start:end:step]`, where `start` is the index of the first element to include, `
+list_slicing = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+print(list_slicing[1:10:2])
+
+# How do you copy a list
+# There are two ways to copy a list in Python: using the `copy()` method and the `list()` constructor.
+# The `copy()` method creates a shallow copy of the list, while the `list()` constructor creates a new list from an existing iterable.
+# Both methods create a new list that contains the same elements as the original list, but they do not create a deep copy
+list_copy = [1,2,3,4,5,6,7,8,9,10]
+print(list_copy)
+list_copy2 = list_copy.copy()
+print(list_copy2)
+
+# Using the list() constructor to copy a list
+list_copy3 = list(list_copy)
+print(list_copy3)
+
+
+# Waht is the difference between a shallow copy and a deep copy
+# A shallow copy creates a new object, but it does not create copies of the objects contained within the original object. Instead,
+#  it copies references to those objects.
+# A deep copy creates a new object and recursively copies all objects contained within the original object, creating new instances of those objects
+list_shallow = [1, 2, [3, 4], 5,6 ]
+list_deep = ["a", "b", "c", "d", "e", "f"]
+import copy
+shallow_copy = list_shallow.copy()  # Shallow copy
+deep_copy = copy.deepcopy(list_deep)  # Deep copy
+print(shallow_copy)
+print(deep_copy)
+
+#How to merge two lists
+# There are several ways to merge two lists in Python: using the `+` operator,
+# using the `extend()` method, and using the `itertools.chain()` function.
+# using loop and append method
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = list1+list2 # Using the + operator
+print(list3)
+#Extend MEthod
+list1.extend(list2)
+print(list1)
+#Using loop and append
+for li in list1:
+	list1.append(list2)
+	print(list1)
+
+#How to remove duplicates from a list
+# There are several ways to remove duplicates from a list in Python: using a set, using a loop, and using list comprehension.
+# Using a set is the most efficient way to remove duplicates
+list1a = [1,2,3,4]
+list1b = [3,4,5,6]
+list1c = list(set(list1a+list1b))
+print(list1c)
+
+#Using Manual loop
+list2a = [1,2,1,3,1,4,5,6,7,8,9,10]
+list2b = [1,1,2,34,5,6]
+merged = []
+for item in list2a+list2b:
+	if item not in merged:
+		merged.append(item)
+	print(merged)
+
+#List Comprehension:
+#List comprehension is a compact way to create a lists by applying an expression to each item in an iterable.
+#[expression for item in iterable if condition]
+#expression : The operation to perform on each item.
+#item : The variable that takes the value of each item in the iterable.
+#iterable : The collection of items to iterate over.
+#condition : An optional filter to include only items
+list_comp = [1,2,3,4,5,6,7,8,9,10]
+suqre = [x ** 2 for x in list_comp if x >=2]
+print(suqre)
+
+# List comprehension to remove duplicates
+list_comp2 = [1,2,3,4,5,6,5,5,5,5,5,1]	
+list_comp_dup = []
+[list_comp_dup.append(x) for x in list_comp2 if x not in list_comp_dup]
+print(list_comp_dup)
+
+#Python managesmanaages list memory using a system of dynamic arrays, over allocation and reference counting.
+# When you create a list, Python allocates a block of memory to hold the elements of the list.
+# If the list grows beyond the allocated memory, Python automatically allocates a larger block of memory and copies the elements to the new block.
+# Python lists are arrays of pointers to objects, not arrays of raw values.
+#Memory Allocation Strategy
+	#Over Allocation: Python allocates more memory than is needed for the current elements to accommodate future growth without frequent reallocations.
+	#Reference Counting: Python uses reference counting to manage memory. Each object has a reference count
+	#Dynamic Resizing : If the lists grow beyond allocated memory, python reallocates a larger block of memory and copies the existing pointers.
+
+#Time complexity of list operations
+# append(x) - O(1) Amortized (constant time) - appending element is constant time but sometimes it requires resizing the list.
+#insert(i,x) - O(n) - (linear time) - time complexity is linear because it may require shifting elements to make space for the new element.
+#remove(x) - O(n)- lineasr time
+#pop(i) - O(n) - linear time if you specify an index, otherwise O(1) for popping the last element.
+
+## What is the difference between a list and array in python ?
+#List - Can hold mixed data types, no import needed,slower for numerical operations, dynamic resizing, more memory overhead.
+#Array - Must hold only same data type, import needed requries array or numpy,faster numerical operations
+
+# The * operator in python has powerful effects when used with lists.
+result =[0] * 15  # Creates a list with 5 references to the same object
+print(result)
+
+# How negative index works in python ?
+# Negative indexing allows you to access elements from the end of the list.
+list_neg = [1,2,3,4,5]
+print(list_neg[1])
+#last element
+print(list_neg[-4])
+
+#Whats the difference between is and == when comparing lists ?
+#In python lists == and is server different purposes even though they look similar.
+##== Value Equality
+a = [1,2,3]
+b = [1,2,3]
+print(a==b) # True - compares values
+
+##IS - Idenity Equality
+#Checks wheather two variable point to the exact same object in memory
+a1 =[1,2,3]
+b1 =[1,2,3]
+b1=a1
+print(a1 is b1)
+c1 = [1,2,3]
+print(a1 is c1)
+
+#How do you flatten a nested list ?
+list_nested=[[1,2,3],[4,5,6,7],[8]]
+print(list_nested)
+#using list comprehension
+##xx = [x in list_nested for x in list_nested]
+li_nt= [item for sublist in list_nested for item in sublist]
+print(li_nt)
+
+#Can list contain other data structures like dictionaries or sets or tuples?
+#yes, lists in Python can contain other data structures like dictionaries, sets, and tuples.
+#Nested Lists
+list_nested = [[1,2],3,[4,5]]
+print(list_nested)
+#Dictionaries in Lists
+list_dictionry = [{"name": "AAAA", "age": 30}, {"name": "BBBB", "age": 25}]
+print(list_dictionry)				   
+#Tuples in Lists
+list_tuple = [(1,2,3), (4,5,6)]
+print(list_tuple)
+
+
+#############
+
+
+
+
+
+
+
+
 
 
 
